@@ -95,6 +95,10 @@
                       })
                     }}
                   </div>
+                  <div class="d-flex" v-if="currentActor.nationality">
+                    Nationality: <span class="px-1"><b>{{ currentActor.nationality.alpha2 }}</b></span>
+                    <Flag :width="23" :value="currentActor.nationality.alpha2" />
+                  </div>
                   <div class="py-1">
                     <b>{{ currentActor.numScenes }}</b>
                     {{ currentActor.numScenes === 1 ? "scene" : "scenes" }}

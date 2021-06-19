@@ -22,7 +22,7 @@
             ></v-img>
           </v-fade-transition>
 
-          <div class="corner-actions">
+          <div class="bottom-actions">
             <v-btn
               light
               class="elevation-2 mr-1"
@@ -43,6 +43,9 @@
             >
               <v-icon>{{ value.bookmark ? "mdi-bookmark-check" : "mdi-bookmark-outline" }}</v-icon>
             </v-btn>
+            <div class="flag" v-if="value.nationality">
+              <Flag :width="32" :value="value.nationality.alpha2" />
+            </div>
           </div>
         </v-img>
       </a>
@@ -50,7 +53,6 @@
 
     <div class="px-2">
       <v-card-title class="d-flex align-center px-0 pt-1" style="font-size: 1.1rem">
-        <Flag class="mr-1" v-if="value.nationality" :width="25" :value="value.nationality.alpha2" />
         <div :title="value.name" class="text-truncate">
           {{ value.name }}
         </div>
@@ -186,9 +188,17 @@ export default class ActorCard extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.corner-actions {
-  position: absolute;
-  bottom: 5px;
+.bottom-actions {
   left: 5px;
+  bottom: 5px;
+  position: absolute;
+  right: 5px;
+  display: flex;
+}
+.flag {
+  padding-top: 0.5em;
+  padding-right: 0.05em;
+  /*background-color: red;*/
+  margin-left: auto;
 }
 </style>

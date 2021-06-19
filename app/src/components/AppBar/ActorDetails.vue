@@ -4,7 +4,6 @@
       <v-icon>mdi-chevron-left</v-icon>
     </v-btn>
     <v-toolbar-title v-if="$vuetify.breakpoint.smAndUp" class="d-flex align-center mr-1 title">
-      <Flag class="mr-1" v-if="currentActor.nationality" :value="currentActor.nationality.alpha2" />
       <div class="mr-1">{{ currentActor.name }}</div>
       <div class="subtitle-1 med--text" v-if="currentActor.bornOn">
         ({{
